@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="500dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/imageViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toTopOf="@+id/Horizontal_50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/kenting"
+            android:contentDescription="@string/placeholder_viewImage" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/TextViewBG"
+            android:fontFamily="@font/font1"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/placeholder_ViewName"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+    </RelativeLayout>
+
+    <TextView
+    android:id="@+id/temperature"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:drawablePadding="5dp"
+    android:fontFamily="@font/font1"
+    android:text="@string/placeholder_Temperature"
+    android:textSize="18sp"
+    app:drawableStartCompat="@drawable/temperature"
+    app:layout_constraintBottom_toTopOf="@+id/Horizontal_57"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/Horizontal_50" />
+
+<TextView
+    android:id="@+id/humidity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:drawablePadding="5dp"
+    android:fontFamily="@font/font1"
+    android:text="@string/placeholder_Humidity"
+    android:textSize="18sp"
+    app:drawableStartCompat="@drawable/humidity"
+    app:layout_constraintBottom_toTopOf="@+id/Horizontal_57"
+    app:layout_constraintStart_toStartOf="@+id/Vertical_50"
+    app:layout_constraintTop_toBottomOf="@+id/Horizontal_50" />
+
+<TextView
+    android:id="@+id/windspeed"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:drawablePadding="5dp"
+    android:fontFamily="@font/font1"
+    android:text="@string/Placeholder_windSpeed"
+    android:textSize="18sp"
+    app:drawableStartCompat="@drawable/windspeed"
+    app:layout_constraintBottom_toTopOf="@+id/Horizontal_64"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/Horizontal_57" />
+
+<TextView
+    android:id="@+id/winddirection"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:drawablePadding="5dp"
+    android:fontFamily="@font/font1"
+    android:text="@string/placeholder_WindDirection"
+    android:textSize="18sp"
+    app:drawableStartCompat="@drawable/winddirection"
+    app:layout_constraintBottom_toTopOf="@+id/Horizontal_64"
+    app:layout_constraintStart_toStartOf="@+id/Vertical_50"
+    app:layout_constraintTop_toTopOf="@+id/Horizontal_57" />
+
+<TextView
+    android:id="@+id/ultriaviolet"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:drawablePadding="5dp"
+    android:fontFamily="@font/font1"
+    android:text="@string/placeholder_UltraViolet"
+    android:textSize="18sp"
+    app:drawableStartCompat="@drawable/ultraviolet"
+    app:layout_constraintBottom_toTopOf="@+id/Horizontal_71"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/Horizontal_64" />
+
+<TextView
+    android:id="@+id/raindrop"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:drawablePadding="5dp"
+    android:fontFamily="@font/font1"
+    android:text="@string/placeholder_Raindrop"
+    android:textSize="18sp"
+    app:drawableStartCompat="@drawable/raindrop"
+    app:layout_constraintBottom_toTopOf="@+id/Horizontal_78"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/Horizontal_71" />
+
+<TextView
+    android:id="@+id/comment"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:drawablePadding="5dp"
+    android:fontFamily="@font/font1"
+    android:text="@string/placeholder_Comment"
+    android:textSize="18sp"
+    app:drawableStartCompat="@drawable/comment"
+    app:layout_constraintBottom_toTopOf="@+id/Horizontal_85"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/Horizontal_78" />
+
+<Button
+    android:id="@+id/swim"
+    android:layout_width="135dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:drawableStart="@drawable/swim"
+    android:text="游泳"
+    android:textSize="15sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="@id/Vertical_50"
+    app:layout_constraintTop_toTopOf="@+id/Horizontal_85" />
+
+<Button
+    android:id="@+id/diving"
+    android:layout_width="135dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="15dp"
+    android:drawableStart="@drawable/diving"
+    android:text="潛水"
+    android:textSize="15sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/Vertical_50"
+    app:layout_constraintTop_toTopOf="@+id/Horizontal_85" />
+
+<Button
+    android:id="@+id/surfing"
+    android:layout_width="135dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:drawableStart="@drawable/surfing"
+    android:text="衝浪"
+    android:textSize="15sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="@id/Vertical_50"
+    app:layout_constraintTop_toBottomOf="@+id/swim" />
+
+<Button
+    android:id="@+id/BananaBoat"
+    android:layout_width="135dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="15dp"
+    android:drawableStart="@drawable/banana"
+    android:text="香蕉船"
+    android:textSize="15sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/Vertical_50"
+    app:layout_constraintTop_toBottomOf="@+id/diving" />
+
+<Button
+    android:id="@+id/JetSki"
+    android:layout_width="135dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:drawableStart="@drawable/surfing"
+    android:text="水上摩托車"
+    android:textSize="15sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="@id/Vertical_50"
+    app:layout_constraintTop_toBottomOf="@+id/surfing" />
+
+<Button
+    android:id="@+id/AquaBoard"
+    android:layout_width="135dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="15dp"
+    android:drawableStart="@drawable/banana"
+    android:text="衝浪板"
+    android:textSize="15sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/Vertical_50"
+    app:layout_constraintTop_toBottomOf="@+id/BananaBoat" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Horizontal_50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Horizontal_57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Horizontal_64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Horizontal_71"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Horizontal_78"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Horizontal_85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Vertical_90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+</androidx.constraintlayout.widget.ConstraintLayout>
