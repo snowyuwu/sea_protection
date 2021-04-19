@@ -1,63 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         card_view:cardCornerRadius="0dp"
         card_view:cardElevation="4dp"
-        card_view:cardUseCompatPadding="false"
-        card_view:cardPreventCornerOverlap="false">
+        card_view:cardPreventCornerOverlap="false"
+        card_view:cardUseCompatPadding="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                card_view:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                card_view:layout_constraintGuide_percent="0.45" />
 
             <ImageView
                 android:id="@+id/ViewImage"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
-                app:layout_constraintWidth_percent="0.45"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/zhongao" />
+                card_view:layout_constraintEnd_toEndOf="@id/vertical45" />
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                app:layout_constraintStart_toEndOf="@id/ViewImage"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vertical45"
+                card_view:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/beachName"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
-                    android:layout_alignParentStart="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="中澳沙灘"/>
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="中澳沙灘"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/location"
-                    android:layout_marginStart="10dp"
-                    android:textSize="13sp"
-                    android:layout_below="@id/beachName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="小琉球"/>
+                    android:layout_below="@id/beachName"
+                    android:layout_marginStart="10dp"
+                    android:text="小琉球"
+                    android:textSize="13sp" />
             </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintHeight_percent="0.5"
+                card_view:layout_constraintStart_toStartOf="@id/vertical45"
+                card_view:layout_constraintTop_toBottomOf="@id/gl7"
+                card_view:layout_constraintWidth_percent="0.55">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vertical4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    card_view:layout_constraintGuide_percent="0.3" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vertical6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    card_view:layout_constraintGuide_percent="0.6" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vertical9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    card_view:layout_constraintGuide_percent="0.9" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontal5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    card_view:layout_constraintGuide_percent="0.5" />
+
+
+                <ImageView
+                    android:id="@+id/swimming"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/swim"
+                    card_view:layout_constraintBottom_toBottomOf="@id/horizontal5"
+                    card_view:layout_constraintEnd_toStartOf="@id/vertical4"
+                    card_view:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/diving"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/diving"
+                    card_view:layout_constraintBottom_toBottomOf="@id/horizontal5"
+                    card_view:layout_constraintEnd_toStartOf="@id/vertical6"
+                    card_view:layout_constraintStart_toStartOf="@id/vertical4"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/surfing"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/surfing"
+                    card_view:layout_constraintBottom_toBottomOf="@id/horizontal5"
+                    card_view:layout_constraintEnd_toStartOf="@id/vertical9"
+                    card_view:layout_constraintStart_toStartOf="@id/vertical6"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/BananaBoat"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/banana"
+                    card_view:layout_constraintEnd_toStartOf="@id/vertical4"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="@id/horizontal5" />
+
+                <ImageView
+                    android:id="@+id/JetSki"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/jetski"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintEnd_toStartOf="@id/vertical6"
+                    card_view:layout_constraintStart_toStartOf="@id/vertical4"
+                    card_view:layout_constraintTop_toTopOf="@id/horizontal5" />
+
+                <ImageView
+                    android:id="@+id/AquaBoard"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/aquaboard"
+                    card_view:layout_constraintBottom_toBottomOf="parent"
+                    card_view:layout_constraintEnd_toStartOf="@id/vertical9"
+                    card_view:layout_constraintStart_toStartOf="@id/vertical6"
+                    card_view:layout_constraintTop_toTopOf="@id/horizontal5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

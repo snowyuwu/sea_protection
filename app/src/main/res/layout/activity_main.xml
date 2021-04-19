@@ -9,79 +9,84 @@
     android:background="#e5f5e5"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <ImageView
+        android:id="@+id/title"
+        android:src="@drawable/title"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/website"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/button_bg"
+        android:src="@drawable/website"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.mancj.materialsearchbar.MaterialSearchBar
         android:id="@+id/searchBar"
         style="@style/MaterialSearchBarLight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:mt_hint="今天你想去哪裡?"
-        app:mt_placeholder="搜尋"
-        app:mt_maxSuggestionsCount="1" />
-
-    <com.jaredrummler.materialspinner.MaterialSpinner
-        android:id="@+id/arrange"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"
-        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="25dp"
+        app:mt_roundedSearchBarEnabled="true"
+        app:mt_menuIconDrawable="@drawable/fliter"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+        app:layout_constraintWidth_percent="0.55"
+        app:mt_maxSuggestionsCount="5"
+        app:mt_placeholder="搜尋" />
+
+    <ImageButton
+        android:id="@+id/GPS"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/button_bg"
+        android:src="@drawable/gps"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/searchBar" />
 
     <ImageButton
         android:id="@+id/filter"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/slider_25"
-        android:background="?android:attr/selectableItemBackground"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/button_bg"
+        android:src="@drawable/fliter"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchBar"/>
+        app:layout_constraintStart_toEndOf="@+id/GPS" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/arrange"/>
-
-    <com.getbase.floatingactionbutton.FloatingActionsMenu
-        android:id="@+id/multiple_actions_down"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="10dp"
-        fab:fab_addButtonColorNormal="@color/white"
-        fab:fab_addButtonColorPressed="@color/white"
-        fab:fab_addButtonPlusIconColor="@color/black"
-        fab:fab_addButtonSize="mini"
-        fab:fab_expandDirection="up"
-        fab:layout_constraintBottom_toBottomOf="parent"
-        fab:layout_constraintEnd_toEndOf="parent">
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_colorPressed="@color/ios_grey" />
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_colorPressed="@color/ios_grey" />
-    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

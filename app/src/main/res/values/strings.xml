@@ -16,8 +16,8 @@
     <string name="placeholder_UltraViolet">紫外線等級：輕量級</string>
     <string name="placeholder_Raindrop">降雨率：87%</string>
     <string name="placeholder_Comment">小語：乖乖待在家裡不要出門</string>
-    <string name="placeholder_Humidity">濕度：87%</string>
-    <string name="placeholder_Temperature">溫度：87°C</string>
-    <string name="placeholder_ViewName">墾丁</string>
+    <string name="placeholder_Humidity">濕度：40%</string>
+    <string name="placeholder_Temperature">溫度：23°C</string>
+    <string name="placeholder_ViewName">龍門公園</string>
     <string name="placeholder_viewImage">景點照片</string>
 </resources>

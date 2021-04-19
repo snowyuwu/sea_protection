@@ -24,11 +24,13 @@ public class CustomNotification {
 
 
         Notification notification = new NotificationCompat.Builder(context,"Channel_ID")
-                .setContentTitle("緊急狀況發生")
-                .setContentText("請儘快前往避難!")
+                .setContentTitle("颱風海上警報")
+                .setContentText("您的所在場所出現颱風海上警報，請即時做好防範措施!")
+//                .setContentTitle("適宜活動變更")
+//                .setContentText("您的所在場所不適合進行以下活動：游泳、潛水，請儘量避免進行以上活動!")
                 .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.drawable.raindrop)
-                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(),R.drawable.raindrop))
+                .setSmallIcon(R.drawable.alert)
+                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(),R.drawable.alert))
                 .build();
         manager.notify(1,notification);
 

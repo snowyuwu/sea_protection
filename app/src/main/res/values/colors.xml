@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="CardViewBG">#C4E1FF</color>
     <color name="TextViewBG">#A45A5A5A</color>
+
+    <color name="UnavailableEvent">#85000000</color>
 </resources>
