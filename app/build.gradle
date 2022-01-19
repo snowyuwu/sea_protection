@@ -29,6 +29,11 @@ android {
 }
 
 dependencies {
+    implementation 'com.github.arcadefire:nice-spinner:1.4.4'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
+    implementation 'com.github.kongzue.DialogX:DialogXIOSStyle:latest.release'
+    implementation 'com.github.kongzue.DialogX:DialogX:0.0.38'
+    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
     implementation 'com.squareup.picasso:picasso:2.8'
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.itlgl:iosdialog:1.0.1'

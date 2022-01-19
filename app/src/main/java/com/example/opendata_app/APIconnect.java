@@ -1,4 +1,4 @@
-package com.example.opendata_app;
+    package com.example.opendata_app;
 
 import android.content.Context;
 import android.os.Build;
@@ -25,28 +25,10 @@ import java.util.List;
 import java.util.Map;
 
 public class APIconnect {
-    public static String URL_randomPlace = "http://120.119.77.72:8080/api/getRandomPlace";
+    public static String URL_randomPlace = "http://120.119.77.72:8081/api/getRandomPlace";
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static void randomPlace(Context context, String tableName,List<BeachData> mList) {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_randomPlace, response -> {
-//                JSONObject jsonObject = new JSONObject(response);
-            Log.d("myresponse", response);
-        },
-                error -> Toast.makeText(context, "AddTime Error!" + error.toString(), Toast.LENGTH_LONG).show()) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> data = new HashMap<>();
-                data.put("tableName", tableName);
-                return data;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(context);
-        requestQueue.add(stringRequest);
-    }
-
-    public static Data responseAnalysis(String response,List<BeachData> mList) throws JSONException {
-        Log.d("response analysis","start");
+    public static Data RandomPlaceResponseAnalysis(String response, List<BeachData> mList) throws JSONException {
+        Log.d("response analysis", "start");
         JSONObject jsonObject = new JSONObject(response);
         JSONArray test = jsonObject.getJSONArray("random");
         for (int i = 0; i < test.length(); i++) {
@@ -59,10 +41,52 @@ public class APIconnect {
             String bananaboat = tmp.getString("BananaBoat");
             String aquaboard = tmp.getString("AquaBoard");
             String viewimage = tmp.getString("image");
+            String type = tmp.getString("type");
             String city = tmp.getString("name");
-            mList.add(new BeachData(area, swim, diving, surfing, jetski, bananaboat, aquaboard, viewimage, city));
+            mList.add(new BeachData(area, swim, diving, surfing, jetski, bananaboat, aquaboard, viewimage, type, city));
         }
-        Log.d("response analysis", String.valueOf(mList.size()));
+        return new Data(mList);
+    }
+
+    public static Data SearchResponseAnalysis(String response, List<BeachData> mList) throws JSONException {
+        JSONArray searchJSON = new JSONArray(response);
+        Log.d("searchresponse",response);
+        for (int i = 0; i < searchJSON.length(); i++) {
+            JSONObject tmp = searchJSON.getJSONObject(i);
+            Log.d("SearchResponseAnalysis", tmp.getString("Area"));
+            String area = tmp.getString("Area");
+            String swim = tmp.getString("Swim");
+            String diving = tmp.getString("Diving");
+            String surfing = tmp.getString("Surfing");
+            String jetski = tmp.getString("Jetski");
+            String bananaboat = tmp.getString("BananaBoat");
+            String aquaboard = tmp.getString("AquaBoard");
+            String viewimage = tmp.getString("image");
+            String type = tmp.getString("type");
+            String city = tmp.getString("name");
+            mList.add(new BeachData(area, swim, diving, surfing, jetski, bananaboat, aquaboard, viewimage, type, city));
+        }
+        return new Data(mList);
+    }
+
+    public static Data CitySearchResponseAnalysis(String response, List<BeachData> mList, String UserCity) throws JSONException {
+        Log.d("city response analysis", "start");
+        JSONArray cityJSON = new JSONArray(response);
+        for (int i = 0; i < cityJSON.length(); i++) {
+            JSONObject tmp = cityJSON.getJSONObject(i);
+            String area = tmp.getString("Area");
+            String swim = tmp.getString("Swim");
+            String diving = tmp.getString("Diving");
+            String surfing = tmp.getString("Surfing");
+            String jetski = tmp.getString("Jetski");
+            String bananaboat = tmp.getString("BananaBoat");
+            String aquaboard = tmp.getString("AquaBoard");
+            String viewimage = tmp.getString("image2");
+            String type = tmp.getString("type");
+            String city = UserCity;
+            Log.d("citysearch response",type);
+            mList.add(new BeachData(area, swim, diving, surfing, jetski, bananaboat, aquaboard, viewimage, type, city));
+        }
         return new Data(mList);
     }
 }

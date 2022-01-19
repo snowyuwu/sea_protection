@@ -1,279 +1,296 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:minWidth="900dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="610dp">
 
-    <RelativeLayout
-        android:id="@+id/imageViewLayout"
-        android:layout_width="fill_parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:layout_alignParentTop="true">
+        android:background="#00000000"
+        app:cardCornerRadius="8dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/placeImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:maxHeight="400dp"
-            android:minHeight="250dp"
-            android:layout_alignParentBottom="true"
-            android:contentDescription="@string/placeholder_viewImage"
-            android:scaleType="centerCrop"
-            android:src="@drawable/kenting" />
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/placeholder_viewImage" />
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="right"
+            android:background="@drawable/close"/>
 
         <TextView
+            android:id="@+id/placeName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
             android:background="@color/TextViewBG"
             android:fontFamily="@font/font1"
             android:paddingStart="15dp"
-            android:paddingTop="5dp"
             android:paddingEnd="0dp"
-            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:text="@string/placeholder_ViewName"
             android:textColor="@color/white"
-            android:textSize="40sp" />
-
-    </RelativeLayout>
+            android:textSize="35dp" />
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageViewLayout">
+        android:layout_below="@id/placeImage">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contentView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp">
 
             <TextView
                 android:id="@+id/temperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/font1"
                 android:text="@string/placeholder_Temperature"
-                android:textSize="18sp"
-                app:drawableStartCompat="@drawable/temperature" />
+                android:textSize="17dp"
+                app:drawableStartCompat="@drawable/temperature"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
                 android:id="@+id/humidity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/font1"
                 android:text="@string/placeholder_Humidity"
-                android:textSize="18sp"
+                android:textSize="17dp"
                 app:drawableStartCompat="@drawable/humidity"
-                android:layout_toEndOf="@id/temperature"/>
+                app:layout_constraintStart_toStartOf="@+id/middleline"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/windspeed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/font1"
                 android:text="@string/Placeholder_windSpeed"
-                android:textSize="18sp"
+                android:textSize="17dp"
                 app:drawableStartCompat="@drawable/windspeed"
-                android:layout_below="@id/temperature"/>
+                app:layout_constraintTop_toBottomOf="@id/temperature"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
                 android:id="@+id/winddirection"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/font1"
                 android:text="@string/placeholder_WindDirection"
-                android:textSize="18sp"
+                android:textSize="17dp"
                 app:drawableStartCompat="@drawable/winddirection"
-                android:layout_below="@id/humidity"
-                android:layout_toEndOf="@id/windspeed"/>
+                app:layout_constraintStart_toStartOf="@+id/middleline"
+                app:layout_constraintTop_toBottomOf="@id/humidity" />
 
             <TextView
-                android:id="@+id/ultriaviolet"
+                android:id="@+id/ultraviolet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/font1"
                 android:text="@string/placeholder_UltraViolet"
-                android:textSize="18sp"
+                android:textSize="17dp"
                 app:drawableStartCompat="@drawable/ultraviolet"
-                android:layout_below="@id/windspeed"/>
+                app:layout_constraintTop_toBottomOf="@id/windspeed"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/raindrop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/font1"
                 android:text="@string/placeholder_Raindrop"
-                android:textSize="18sp"
+                android:textSize="17dp"
                 app:drawableStartCompat="@drawable/raindrop"
-                android:layout_below="@id/ultriaviolet"/>
+                app:layout_constraintTop_toBottomOf="@id/ultraviolet"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/font1"
                 android:text="@string/placeholder_Comment"
-                android:textSize="18sp"
+                android:textSize="17dp"
                 app:drawableStartCompat="@drawable/comment"
-                android:layout_below="@id/raindrop"/>
+                app:layout_constraintTop_toBottomOf="@id/raindrop"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <Button
                 android:id="@+id/swim"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/dialog_button_bg"
                 android:drawableStart="@drawable/swim"
+                android:drawableTint="@color/white"
+                android:paddingStart="20dp"
+                android:paddingEnd="30dp"
                 android:text="游泳"
-                android:textSize="12sp"
-                android:layout_marginEnd="20dp"
-                android:layout_below="@id/comment"/>
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/middleline"
+                app:layout_constraintStart_toStartOf="@id/front"
+                app:layout_constraintTop_toBottomOf="@id/comment"
+                app:layout_constraintWidth_percent="0.43" />
 
             <Button
                 android:id="@+id/diving"
-                android:layout_width="135dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/dialog_button_bg"
                 android:drawableStart="@drawable/diving"
+                android:drawableTint="@color/white"
+                android:paddingStart="20dp"
+                android:paddingEnd="30dp"
                 android:text="潛水"
-                android:textSize="12sp"
-                android:layout_below="@id/comment"
-                android:layout_toEndOf="@id/swim"/>
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/end"
+                app:layout_constraintStart_toStartOf="@+id/middleline"
+                app:layout_constraintTop_toBottomOf="@id/comment"
+                app:layout_constraintWidth_percent="0.43" />
 
             <Button
                 android:id="@+id/surfing"
-                android:layout_width="135dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/dialog_button_bg"
                 android:drawableStart="@drawable/surfing"
+                android:drawableTint="@color/white"
+                android:paddingStart="20dp"
+                android:paddingEnd="30dp"
                 android:text="衝浪"
-                android:textSize="12sp"
-                android:layout_below="@id/swim"/>
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/middleline"
+                app:layout_constraintStart_toStartOf="@id/front"
+                app:layout_constraintTop_toBottomOf="@id/swim"
+                app:layout_constraintWidth_percent="0.43" />
 
             <Button
                 android:id="@+id/BananaBoat"
-                android:layout_width="135dp"
+                android:background="@drawable/dialog_button_bg"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
+                app:layout_constraintWidth_percent="0.43"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="30dp"
                 android:drawableStart="@drawable/banana"
+                android:drawableTint="@color/white"
                 android:text="香蕉船"
-                android:textSize="12sp"
-                android:layout_below="@id/diving"
-                android:layout_toEndOf="@id/surfing"/>
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/middleline"
+                app:layout_constraintTop_toBottomOf="@id/diving"
+                app:layout_constraintEnd_toStartOf="@id/end"/>
 
             <Button
                 android:id="@+id/JetSki"
-                android:layout_width="135dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginBottom="10dp"
-                android:drawableStart="@drawable/surfing"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/dialog_button_bg"
+                android:drawableStart="@drawable/jetski"
+                android:drawableTint="@color/white"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
                 android:text="水上摩托車"
-                android:textSize="12sp"
-                android:layout_below="@id/surfing" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/middleline"
+                app:layout_constraintStart_toStartOf="@id/front"
+                app:layout_constraintTop_toBottomOf="@id/surfing"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.43" />
 
             <Button
                 android:id="@+id/AquaBoard"
-                android:layout_width="135dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="10dp"
-                android:drawableStart="@drawable/banana"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/dialog_button_bg"
+                android:drawableStart="@drawable/aquaboard"
+                android:drawableTint="@color/white"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:text="衝浪板"
-                android:textSize="12sp"
-                android:layout_below="@id/BananaBoat"
-                android:layout_toEndOf="@id/JetSki"/>
-        </RelativeLayout>
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/end"
+                app:layout_constraintStart_toStartOf="@+id/middleline"
+                app:layout_constraintTop_toBottomOf="@id/BananaBoat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.43" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/middleline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/front"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_40"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_50"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_60"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_70"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.7" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_80"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vertical_90"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
-</RelativeLayout>
+</LinearLayout>
