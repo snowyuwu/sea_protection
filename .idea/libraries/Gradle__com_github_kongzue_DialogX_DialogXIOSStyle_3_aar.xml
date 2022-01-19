@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.kongzue.DialogX:DialogXIOSStyle:3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca8c17a52b3ef7e13e176b1a7ea38a6f/jetified-DialogXIOSStyle-3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca8c17a52b3ef7e13e176b1a7ea38a6f/jetified-DialogXIOSStyle-3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca8c17a52b3ef7e13e176b1a7ea38a6f/jetified-DialogXIOSStyle-3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kongzue.DialogX/DialogXIOSStyle/3/bf8ab24289684693312e12a98a196b29e21fb8ee/DialogXIOSStyle-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
